@@ -1,0 +1,23 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-delay-1 {
+  animation-delay: .2s;
+}
+
+.animate-delay-2 {
+  animation-delay: .4s;
+}
+
+.animate-delay-3 {
+  animation-delay: .6s;
+}
+
+.animate-delay-4 {
+  animation-delay: .8s;
+}
+
+.animate-delay-5 {
+  animation-delay: 1s;
+}
