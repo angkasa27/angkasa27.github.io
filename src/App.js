@@ -13,10 +13,7 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    if (
-      location.pathname === '/react-tailwind-glassmorphic' ||
-      location.pathname === '/react-tailwind-glassmorphic/'
-    )
+    if (location.pathname === '/' || location.pathname === '/angkasa27')
       setClasses(' top-87/100');
     else setClasses(' top-12');
   }, [location.pathname]);
@@ -26,6 +23,7 @@ export default function App() {
       <Nav className={classes} />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/angkasa27" component={Home} />
         <Route exact path="/project" component={Project} />
         <Route exact path="/about" component={About} />
         <Route exact path="/work" component={Err} />

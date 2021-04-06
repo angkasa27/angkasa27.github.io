@@ -42,7 +42,7 @@ export function Main() {
         </p>
         <span
           className="md:mb-24 text-xl font-semibold md:text-left text-center text-yellow-500 hover:text-yellow-600 transition-default cursor-pointer"
-          onClick={() => history.push('/react-tailwind-glassmorphic')}
+          onClick={() => history.push('/')}
         >
           back to main
         </span>
