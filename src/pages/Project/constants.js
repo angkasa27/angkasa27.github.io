@@ -29,7 +29,7 @@ export const Data = [
     name: '[WEB] Traveline.html',
     img: traveline,
     link: 'https://traveline.web.app',
-    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, qui. Inventore, similique, quam facilis impedit expedita eos ea voluptatem molestiae officiis cumque eveniet aperiam officia in hic. Placeat, est error?',
+    desc: 'Traveline adalah web statis bertema jalan jalan virtual yang saya buat untuk tahap penyisihan kompetisi desain web Hiedescom 2020. Web ini memiliki fitur landing page yang berbeda beda di setiap kota dan terdapat halaman untuk menjual produk khas kota tersebut',
   },
   {
     file: '[WEB] 4.0 - Revolusi Industri.html',
