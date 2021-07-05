@@ -58,15 +58,16 @@ export function Main() {
               Dimas Angkasa Nurindra
             </h1>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold sm:text-left text-center">
-              Male, 17 years old
+              Male, 18 years old
             </h3>
           </div>
         </div>
         <p className="mt-3 text-xl font-semibold md:text-left text-center md:w-2/3">
-          I am a student at SMK Telkom Malang. My expertises are Graphic
-          Designer and FrontEnd Web Developer using ReactJS. Currently, im
-          learning about TailwindCSS. I have interest in UI Design, specially in
-          mobile view. I can work with team or independently well
+          I am a fresh graduate from SMK Telkom Malang. Currently working at PT
+          Telkom Indonesia Digital and Next Bussiness at Tribe Enterprise and
+          Wholesale Digitization. My expertises are Graphic Designer and
+          FrontEnd Web Developer using ReactJS. Currently, im learning about
+          TailwindCSS.
         </p>
       </div>
     </main>
@@ -94,7 +95,7 @@ export function Skills() {
   return (
     <div
       className={
-        'bg-window z-20 right-5/100 top-2/5 md:absolute bg-glass transition-all duration-500 ease-out mt-5 md:mt-0 pb-1 md:pb-0 md:w-1/3 ' +
+        'bg-window z-20 right-5/100 top-2/5 md:absolute bg-glass transition-all duration-500 ease-out mt-5 md:mt-0 pb-1 md:pb-0 md:w-1/4 ' +
         classes
       }
     >

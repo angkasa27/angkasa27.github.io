@@ -86,7 +86,7 @@ export function Windows({ data, idx, setDetail, setOpen }) {
         src={data.img}
         className="bg-white rounded-lg object-cover w-full h-36 md:h-48"
       />
-      <p className="font-mono text-sm mt-2 text-center">{data.name}</p>
+      <p className="font-mono text-sm mt-2 text-center">{data.file}</p>
     </span>
   );
 }

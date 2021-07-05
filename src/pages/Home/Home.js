@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactTypingEffect from 'react-typing-effect';
 import Header from '../../components/elements/Header';
 import Social from '../../components/fragments/Social';
+import { DATA } from './constans';
 
 export default function Home() {
   return (
@@ -15,12 +16,6 @@ export default function Home() {
 
 export function Main() {
   const [classes, setClasses] = useState('invisible md:visible');
-  const desc = [
-    'Love to learn new thing',
-    'Still looking for better chance',
-    '2 months to go before graduate from high schools',
-    'currently learning about react with tailwind',
-  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,26 +33,27 @@ export function Main() {
       <Header name="welcome.txt" />
       <div className="flex flex-col justify-center md:items-baseline h-full md:px-10 py-14 md:py-0 md:w-2/3 ">
         <h3 className="text-xl sm:text-2xl md:text-3xl mb-3 md:mb-5 font-bold md:text-left text-center">
-          Hi! I'm <span className="text-yellow-500">Dimas</span> Angkasa
+          Hi! I'm <span className="text-yellow-500">Dimas</span>
+          {' Angkasa '}
+          <span className="hidden md:inline-block"> Nurindra</span>
         </h3>
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-3 md:mb-5 text-yellow-500 md:text-left text-center">
-          Graphic Designer <span className="text-gray-800">&</span>
-          <br className="md:hidden" /> Front End Developer
+          {DATA.job1} <span className="text-gray-800">&</span>
+          <br className="md:hidden" /> {DATA.job2}
         </h1>
-
         <p className="md:mb-24 text-xl font-semibold md:text-left text-center">
           <ReactTypingEffect
             speed={100}
             eraseSpeed={100}
             typingDelay={500}
-            text={desc}
+            text={DATA.typing}
             cursorRenderer={(cursor) => <span>{cursor}</span>}
             displayTextRenderer={(text, i) => {
               return <h1>{text}</h1>;
             }}
           />
           <br />
-          and still need to learn more
+          {DATA.secondary}
         </p>
       </div>
     </main>

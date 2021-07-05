@@ -19,21 +19,21 @@ export default function Nav({ className }) {
         <div className="mt-2 sm:mt-0">
           <NavLink
             to="/about"
-            className="transition-default nav-link mr-8"
+            className="nav-link mr-8"
             activeClassName="bg-yellow-400 text-white"
           >
             About
           </NavLink>
           <NavLink
             to="/project"
-            className="transition-default nav-link mr-8"
+            className="nav-link mr-8"
             activeClassName="bg-yellow-400 text-white"
           >
             Project
           </NavLink>
           <NavLink
             to="/work"
-            className="transition-default nav-link"
+            className="nav-link"
             activeClassName="bg-yellow-400 text-white"
           >
             Work
