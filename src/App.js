@@ -1,33 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Project from './pages/Project';
-import About from './pages/About';
-import Err from './pages/404';
-import './App.css';
-import Nav from './components/elements/Nav';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./tailwind.css";
+import Main from "./section/main";
+import Navbar from "./elements/Navbar";
+import Project from "./section/project";
+import Contact from "./section/contact";
+import { Logo } from "./assets/SVG";
 
 export default function App() {
-  const [classes, setClasses] = useState('');
-  const location = useLocation();
+  const [loading, setLoading] = useState(true);
+  const [loadingClass, setLoadingClass] = useState(" ");
+  const [mainClass, setMainClass] = useState(" hidden");
 
   useEffect(() => {
-    if (location.pathname === '/' || location.pathname === '/angkasa27')
-      setClasses(' top-87/100');
-    else setClasses(' top-12');
-  }, [location.pathname]);
+    if (!loading) {
+      setLoadingClass(" animate-out");
+      setMainClass(" ");
+      setTimeout(() => {
+        setLoadingClass(" hidden");
+      }, 200);
+    }
+  }, [loading]);
 
   return (
-    <div className="bg-gray-100  text-gray-800 font-nunito min-h-screen min-w-screen p-5 md:p-0 overflow-hidden">
-      <Nav className={classes} />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/angkasa27" component={Home} />
-        <Route exact path="/project" component={Project} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/work" component={Err} />
-      </Switch>
+    <div className="bg-white  font-nunito text-gray-800 dark:bg-gray-800 dark:text-white">
+      <div className={mainClass}>
+        <Navbar />
+        <Main setLoading={setLoading} />
+        <Project />
+        <Contact />
+        <div className="bg-gray-800 dark:bg-gray-900 text-white flex justify-center py-5 text-sm tracking-wider">
+          {"Hi! im a Footer :)"}
+        </div>
+      </div>
+      <div
+        className={
+          "w-screen h-screen bg-gray-800 text-white z-50 flex items-center justify-center fixed top-0 " +
+          loadingClass
+        }
+      >
+        <Logo className="w-12 h-12 animate-bounce" />
+      </div>
     </div>
   );
 }
