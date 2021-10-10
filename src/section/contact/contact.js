@@ -107,7 +107,7 @@ export default function Contact() {
           >
             <h4 className="mt-10  font-bold text-center md:text-left">
               Follow me on Social Media
-            </h4>{" "}
+            </h4>
           </ScrollAnimation>
 
           <div className="flex mt-5 md:mt-3 md:justify-start justify-center">

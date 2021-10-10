@@ -1,16 +1,16 @@
-import main from "./main.png";
-import bg from "./bg.png";
-import MyComplaint from "./mycomplaint.jpg";
-import Frekuensi from "./frekuensi.jpg";
-import Amir from "./amir.jpg";
+import Main from "./Main.png";
+import Bg from "./Bg.png";
+import MyComplaint from "./MyComplaint.jpg";
+import Frekuensi from "./Frekuensi.jpg";
+import Amir from "./Amir.jpg";
 import Traveline from "./Traveline.jpg";
 import Socied from "./Socied.jpg";
 import Contact from "./Contact.png";
 import ContactBg from "./ContactBg.png";
 
 const image = {
-  Main: main,
-  Bg: bg,
+  Main,
+  Bg,
   MyComplaint,
   Frekuensi,
   Amir,
