@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply overscroll-none font-lato text-sm text-slate-800 md:text-base;
+  @apply overscroll-none font-lato text-base text-slate-800 md:text-lg;
 }
 
 h1 {
@@ -36,9 +36,9 @@ u {
 }
 
 .defaultTransition {
-  @apply transition-colors duration-300 ease-out;
+  @apply transition-colors duration-200 ease-out;
 }
 
 .defaultTransitionAll {
-  @apply transition-all duration-300 ease-out;
+  @apply transition-all duration-200 ease-out;
 }

@@ -27,22 +27,26 @@ export default function Button({
     }
   }
   const buttonDefault =
-    ' outline-none flex items-center justify-center text-base hover:-translate-y-1 defaultTransitionAll ' +
+    ' outline-none flex items-center justify-center text-base hover:-translate-y-1 ' +
     buttonSize()
 
   useEffect(() => {
     switch (type) {
       case 'primary': {
-        setClasses(defaultClass + buttonDefault + '  rounded defaultTransition')
+        setClasses(
+          defaultClass + buttonDefault + '  rounded defaultTransitionAll'
+        )
         break
       }
       case 'text': {
-        setClasses(' defaultTransition')
+        setClasses(' defaultTransitionAll')
         break
       }
       default: {
         setClasses(
-          defaultClass + buttonDefault + ' text-white rounded defaultTransition'
+          defaultClass +
+            buttonDefault +
+            ' text-white rounded defaultTransitionAll'
         )
         break
       }

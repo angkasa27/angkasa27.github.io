@@ -1,6 +1,7 @@
 export const MENU = [
-  { name: 'Fitur', href: '/#feature' },
-  { name: 'Desain', href: '/theme' },
-  { name: 'Harga', href: '/#price' },
-  { name: 'Testimoni', href: '/#testimonial' },
+  { label: 'Home', href: '/#main', name: 'main' },
+  { label: 'About', href: '/#about', name: 'about' },
+  { label: 'Skills', href: '/#skills', name: 'skills' },
+  { label: 'My Work', href: '/#project', name: 'project' },
+  { label: 'Contact', href: '/#contact', name: 'contact' },
 ]
