@@ -12,12 +12,10 @@ export default function Button({
   small,
   responsive,
   nav,
-  disabled,
   ...props
 }) {
   const [classes, setClasses] = useState('')
-  const defaultClass =
-    ' ' + (!disabled && ' cursor-pointer ') + ' font-semibold tracking-wider '
+  const defaultClass = ' ' + ' font-semibold tracking-wider '
   const buttonSize = () => {
     switch (true) {
       case responsive:
@@ -36,41 +34,19 @@ export default function Button({
     switch (type) {
       case 'primary': {
         setClasses(
-          defaultClass +
-            buttonDefault +
-            ' text-white rounded-lg defaultTransition' +
-            (disabled ? ' bg-pink-400 ' : ' hover:bg-pink-600 bg-pink-500 ')
-        )
-        break
-      }
-      case 'white': {
-        setClasses(
-          defaultClass +
-            buttonDefault +
-            'bg-white  text-pink-500 rounded-lg defaultTransition hover:bg-pink-200'
-        )
-        break
-      }
-      case 'outline': {
-        setClasses(
-          defaultClass +
-            buttonDefault +
-            'border border-pink-500 text-pink-500 rounded-lg hover:bg-pink-600 hover:text-white defaultTransition'
+          defaultClass + buttonDefault + '  rounded-lg defaultTransition'
         )
         break
       }
       case 'text': {
-        setClasses(
-          defaultClass + 'leading-none hover:text-pink-500 defaultTransition'
-        )
+        setClasses(defaultClass + 'leading-none defaultTransition')
         break
       }
       default: {
         setClasses(
           defaultClass +
             buttonDefault +
-            ' text-white rounded-lg defaultTransition' +
-            (disabled ? ' bg-pink-400 ' : ' hover:bg-pink-600 bg-pink-500 ')
+            ' text-white rounded-lg defaultTransition'
         )
         break
       }
@@ -83,7 +59,6 @@ export default function Button({
         <motion.button
           onClick={onClick}
           className={classes + ' ' + className}
-          disabled={disabled}
           {...props}
         >
           {children}
@@ -92,11 +67,7 @@ export default function Button({
     case !!to:
       return (
         <Link href={to} {...props}>
-          <motion.button
-            className={classes + ' ' + className}
-            {...props}
-            disabled={disabled}
-          >
+          <motion.button className={classes + ' ' + className} {...props}>
             {children}
           </motion.button>
         </Link>
@@ -121,11 +92,7 @@ export default function Button({
       )
     default:
       return (
-        <motion.button
-          className={classes + ' ' + className}
-          {...props}
-          disabled={disabled}
-        >
+        <motion.button className={classes + ' ' + className} {...props}>
           {children}
         </motion.button>
       )
