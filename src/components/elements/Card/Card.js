@@ -4,7 +4,7 @@ export default function Card({ children, className, full, ...prop }) {
   return (
     <motion.div
       className={
-        'defaultTransitionAll rounded-xl ' +
+        'defaultTransitionAll rounded ' +
         (full ? '' : 'p-3 md:p-6 ') +
         ' ' +
         className

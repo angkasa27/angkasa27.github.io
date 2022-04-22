@@ -54,7 +54,7 @@ const Modal = ({ children, open, onClose, name, bgClose = false }) => {
         >
           <motion.div
             variants={modalVariant}
-            className="max-w-96 rounded-xl bg-neutral-50 p-2 text-neutral-800"
+            className="max-w-96 rounded bg-neutral-50 p-2 text-neutral-800"
           >
             <div className="flex items-center justify-between">
               <h3 className="font-poppins font-bold">{name}</h3>

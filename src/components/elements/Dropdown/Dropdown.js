@@ -28,7 +28,7 @@ export default function Dropdown(props) {
         <ArrowSm className="h-6 w-6" />
       </button>
       {open && (
-        <div class="absolute top-0 z-10 w-full divide-y divide-gray-100 overflow-hidden rounded-lg bg-white text-gray-800 shadow">
+        <div class="absolute top-0 z-10 w-full divide-y divide-gray-100 overflow-hidden rounded bg-white text-gray-800 shadow">
           <button
             onClick={() => setOpen(!open)}
             class={
