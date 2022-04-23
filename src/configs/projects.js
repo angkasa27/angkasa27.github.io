@@ -13,7 +13,7 @@ export const MYWORK = [
     label: 'ON PROGRESS',
     name: 'MOKLETDEV',
     href: 'https://mokletdev.vercel.app',
-    desc: 'Open-sourced projects by Moklet Developers for the World 4.0',
+    desc: 'Open-sourced projects by Moklet Developers for the World',
     source: 'https://github.com/mokletdev/mokletdev',
     image: Image.Mokletdev,
   },

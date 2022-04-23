@@ -1,9 +1,8 @@
 import { submitWhatsApp } from '@utils/url'
 
 export const CONTACT = {
-  WHATSAPP: (message) => submitWhatsApp('6285172305057', `${message ?? ' '}`),
-
-  INSTAGRAM: 'http://instagram.com/suratbahagia.id',
-  TWITTER: 'https://twitter.com/suratbahagia',
-  FACEBOOK: 'https://facebook.com/suratbahagia',
+  INSTAGRAM: 'http://instagram.com/mas.angkasa27',
+  LINKEDIN: 'https://www.linkedin.com/in/dimasangkasa/',
+  GITHUB: 'https://github.com/angkasa27',
+  DRIBBBLE: 'https://dribbble.com/angkasa27',
 }

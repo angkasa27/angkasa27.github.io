@@ -17,21 +17,24 @@ import Html5 from '@assets/svg/Html5'
 import Tailwind from '@assets/svg/Tailwind'
 import NextJs from '@assets/svg/NextJs'
 import { MYWORK, OTHERPROJECTS } from '@configs/projects'
+import Arrow from '@assets/svg/ArrowSm'
+import { motion } from 'framer-motion'
+import { CONTACT } from '@configs/link'
 
 export default function Main() {
   const [section, setSection] = useState('home')
-  const [color, setColor] = useState('text-green-400')
 
   return (
     <div className="w-full bg-zinc-900">
-      <Navbar color={color} active={section} />
-
+      <Cover />
+      <Navbar active={section} />
       <BottomNav active={section} />
       <div className=" mx-auto w-full max-w-screen-xl px-8 text-white md:px-24">
-        <Home color={color} setSection={setSection} name="main" />
-        <About color={color} setSection={setSection} name="about" />
-        <Skills color={color} setSection={setSection} name="skills" />
-        <Projects color={color} setSection={setSection} name="project" />
+        <Home setSection={setSection} name="main" />
+        <About setSection={setSection} name="about" />
+        <Skills setSection={setSection} name="skills" />
+        <Projects setSection={setSection} name="project" />
+        <Contact setSection={setSection} name="contact" />
       </div>
     </div>
   )
@@ -51,7 +54,9 @@ const Home = ({ color, setSection, name }) => {
       id={name}
       className="flex min-h-screen flex-col justify-center gap-4 "
     >
-      <h3 className={' font-bold ' + color}>{getGreetingTime(moment())}!</h3>
+      <h3 className={' font-bold text-green-500'}>
+        {getGreetingTime(moment())}!
+      </h3>
       <h1 className="font-bold">Dimas Angkasa Nurindra</h1>
       <h2 ref={ref} className="font-bold text-zinc-400">
         <ReactTypingEffect
@@ -74,7 +79,7 @@ const Home = ({ color, setSection, name }) => {
   )
 }
 
-const About = ({ color, setSection, name }) => {
+const About = ({ setSection, name }) => {
   const [ref, inView] = useInView()
 
   useEffect(() => {
@@ -127,7 +132,7 @@ const About = ({ color, setSection, name }) => {
   )
 }
 
-const Skills = ({ color, setSection, name }) => {
+const Skills = ({ setSection, name }) => {
   const [ref, inView] = useInView()
 
   useEffect(() => {
@@ -160,7 +165,7 @@ const Skills = ({ color, setSection, name }) => {
   )
 }
 
-const Projects = ({ color, setSection, name }) => {
+const Projects = ({ setSection, name }) => {
   const [ref, inView] = useInView()
 
   useEffect(() => {
@@ -224,7 +229,7 @@ const Projects = ({ color, setSection, name }) => {
       ))}
 
       <h2 className="mt-12 text-center font-bold">Other Projects</h2>
-      <div className="mx-auto h-1 w-36 bg-green-500" ref={ref} />
+      <div className="mx-auto h-1 w-36 bg-green-500" />
       <p className="text-center text-zinc-400">
         Check out some of the other projects I've been create
       </p>
@@ -271,12 +276,56 @@ const Projects = ({ color, setSection, name }) => {
   )
 }
 
+const Contact = ({ setSection, name }) => {
+  const [ref, inView] = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      setSection(name)
+    }
+  }, [inView])
+
+  return (
+    <section
+      id={name}
+      className="relative flex min-h-screen flex-col justify-center gap-4"
+    >
+      <h2 className=" font-bold ">Contact</h2>
+      <div ref={ref} className="h-1 w-36 bg-green-500" />
+      <p className="text-zinc-400">
+        I'm currently available to get involved in new projects, so get in touch
+        if you'd like to work together.
+      </p>
+      <p className="text-zinc-400">
+        Simply email me at{' '}
+        <span className="font-bold tracking-wide text-green-500">
+          mas.angkasa27@gmail.com
+        </span>{' '}
+        and let's talk about your project!
+      </p>
+      <footer className="absolute bottom-0 flex w-full flex-col gap-4 py-6 md:py-16">
+        <div className="h-1 w-full bg-zinc-600" />
+        <div className="flex justify-between text-zinc-400">
+          <p>© Create by Dimas Angkasa 2022</p>
+          <Button
+            nav="/#main"
+            type="text"
+            className="hover:-translate-y-1 hover:text-white"
+          >
+            <Arrow className="w-6" />
+          </Button>
+        </div>
+      </footer>
+    </section>
+  )
+}
+
 const getGreetingTime = (currentTime) => {
   if (!currentTime || !currentTime.isValid()) {
     return 'Hello'
   }
 
-  const splitAfternoon = 12 // 24hr time to split the afternoon
+  const splitAfternoon = 11 // 24hr time to split the afternoon
   const splitEvening = 17 // 24hr time to split the evening
   const currentHour = parseFloat(currentTime.format('HH'))
 
@@ -297,24 +346,28 @@ const BottomNav = ({ active }) => {
       <div className="relative mx-auto w-full max-w-screen-xl">
         <div className="absolute bottom-0 flex flex-col items-center gap-6">
           <Button
+            href={CONTACT.DRIBBBLE}
             className="text-white hover:-translate-y-1 hover:text-green-500"
             type="text"
           >
             <Dribbble className="h-6 w-6" />
           </Button>
           <Button
+            href={CONTACT.GITHUB}
             className="text-white hover:-translate-y-1 hover:text-green-500"
             type="text"
           >
             <Github className="h-6 w-6" />
           </Button>
           <Button
+            href={CONTACT.INSTAGRAM}
             className="text-white hover:-translate-y-1 hover:text-green-500"
             type="text"
           >
             <Instagram className="h-6 w-6" />
           </Button>
           <Button
+            href={CONTACT.LINKEDIN}
             className="text-white hover:-translate-y-1 hover:text-green-500"
             type="text"
           >
@@ -338,5 +391,129 @@ const BottomNav = ({ active }) => {
         </div>
       </div>
     </div>
+  )
+}
+
+const pathVariants = {
+  hidden: {
+    pathLength: 0,
+  },
+  visible: {
+    fill: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(255, 255, 255, 1)'],
+    pathLength: [0, 1, 1],
+    transition: {
+      delay: 0.5,
+      duration: 1.5,
+      ease: 'easeInOut',
+    },
+  },
+}
+
+export const containerVariant = {
+  visible: {
+    x: ['0vw', '0vw', '-101vw'],
+    opacity: [1, 0, 0],
+    transition: {
+      type: 'tween',
+      delay: 0.5,
+      duration: 0.4,
+      when: 'afterChildren',
+      staggerChildren: 0.3,
+    },
+  },
+  hidden: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'tween',
+    },
+  },
+}
+
+export const visibleVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: [0, 1],
+    transition: {
+      duration: 0.2,
+      delay: 1.7,
+      ease: 'easeIn',
+    },
+  },
+}
+
+export const visibleVariant2 = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: [0, 1, 0, 1, 0, 1, 0, 1],
+    transition: {
+      duration: 0.3,
+      delay: 2.1,
+      ease: 'easeIn',
+    },
+  },
+}
+
+export const visibleVariant3 = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      delay: 2.35,
+      ease: 'easeIn',
+    },
+  },
+}
+
+const Cover = () => {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariant}
+      className="fixed z-[100] flex h-screen w-full items-center justify-center bg-zinc-900"
+    >
+      <div className=" relative text-white">
+        <svg
+          className="h-28 w-28 md:h-48 md:w-48"
+          viewBox="0 0 250 250"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <motion.path
+            variants={pathVariants}
+            d="M17.7468 63.0774L125 1.1547L232.253 63.0774V186.923L125 248.845L17.7468 186.923V63.0774Z"
+            stroke="white"
+            strokeWidth="2"
+          />
+        </svg>
+        <svg
+          className="absolute top-0 h-28 w-28 text-zinc-900 md:h-48 md:w-48"
+          viewBox="0 0 250 250"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <motion.path
+            variants={visibleVariant}
+            d="M30.7881 82.5123V181.85L62.1307 199.914V172.816L85.6524 186.365V213.463L116.995 231.527V132.195L30.7881 82.5123ZM85.6363 159.277L62.1147 145.738V127.675L85.6363 141.224V159.277Z"
+          />
+          <motion.path
+            variants={visibleVariant2}
+            d="M39.4089 67.7604L124.997 18.4729L148.346 31.9491L86.0945 67.7604L93.8772 72.2349L156.123 36.4235L210.591 67.7604L124.997 116.995L101.655 103.566L163.948 67.734L156.123 63.2807L93.8772 99.092L39.4089 67.7604Z"
+          />
+          <motion.path
+            variants={visibleVariant3}
+            d="M133.005 132.193V231.527L164.35 213.459V186.365L187.866 172.815V199.909L219.212 181.847V82.5123L133.005 132.193ZM187.861 145.716L164.345 159.266V141.224L187.861 127.674V145.716Z"
+          />
+        </svg>
+      </div>
+    </motion.div>
   )
 }

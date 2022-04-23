@@ -10,8 +10,6 @@ import Linkedin from '@assets/svg/LinkedIn'
 import Github from '@assets/svg/Github'
 import Dribbble from '@assets/svg/Dribbble'
 import Link from 'next/link'
-import { useEffect } from 'react'
-import Facebook from '@assets/svg/Facebook'
 import Logo from '@assets/svg/Logo'
 
 const menuVariant = {
@@ -38,8 +36,10 @@ const listVariant = {
   hidden: { y: '10vh', opacity: 0, transition: { duration: 0.2 } },
 }
 
-const Nav = ({ show, color, active }) => {
+const Nav = ({ active }) => {
   const [showMenu, setShowMenu] = useState(false)
+
+  console.log(active)
 
   return (
     <>
@@ -57,18 +57,27 @@ const Nav = ({ show, color, active }) => {
                 <motion.li
                   variants={listVariant}
                   key={i}
-                  className="mb-5"
+                  className={
+                    'mb-5 border-b-2  ' +
+                    (v.name === active
+                      ? 'border-green-500 text-white'
+                      : 'border-transparent text-zinc-400 ')
+                  }
                   onClick={() => setShowMenu(false)}
                 >
-                  <Button type="text" nav={v.href} className="w-full">
-                    <h3> {v.label}</h3>
+                  <Button
+                    type="text"
+                    nav={v.href}
+                    className={'hover:text-white '}
+                  >
+                    <h3>{v.label}</h3>
                   </Button>
                 </motion.li>
               ))}
             </ul>
             <div className="flex justify-center gap-4">
               <a
-                href={CONTACT.INSTAGRAM}
+                href={CONTACT.LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -86,7 +95,7 @@ const Nav = ({ show, color, active }) => {
                 </motion.div>
               </a>
               <a
-                href={CONTACT.INSTAGRAM}
+                href={CONTACT.GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -95,7 +104,7 @@ const Nav = ({ show, color, active }) => {
                 </motion.div>
               </a>
               <a
-                href={CONTACT.INSTAGRAM}
+                href={CONTACT.DRIBBBLE}
                 target="_blank"
                 rel="noopener noreferrer"
               >
