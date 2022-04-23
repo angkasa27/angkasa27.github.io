@@ -39,8 +39,6 @@ const listVariant = {
 const Nav = ({ active }) => {
   const [showMenu, setShowMenu] = useState(false)
 
-  console.log(active)
-
   return (
     <>
       <AnimatePresence>
