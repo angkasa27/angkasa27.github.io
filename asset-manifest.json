@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d342a5ec.chunk.css",
+    "main.js": "/static/js/main.314c2ef5.chunk.js",
+    "main.js.map": "/static/js/main.314c2ef5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.609de10c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.609de10c.js.map",
+    "static/js/2.00030a71.chunk.js": "/static/js/2.00030a71.chunk.js",
+    "static/js/2.00030a71.chunk.js.map": "/static/js/2.00030a71.chunk.js.map",
+    "static/js/3.aee5341c.chunk.js": "/static/js/3.aee5341c.chunk.js",
+    "static/js/3.aee5341c.chunk.js.map": "/static/js/3.aee5341c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.d342a5ec.chunk.css.map": "/static/css/main.d342a5ec.chunk.css.map",
+    "static/js/2.00030a71.chunk.js.LICENSE.txt": "/static/js/2.00030a71.chunk.js.LICENSE.txt",
+    "static/media/Contact.07e192a8.png": "/static/media/Contact.07e192a8.png",
+    "static/media/amir.c8afa077.jpg": "/static/media/amir.c8afa077.jpg",
+    "static/media/frekuensi.d0f0c3a5.jpg": "/static/media/frekuensi.d0f0c3a5.jpg",
+    "static/media/main.c4902d9c.png": "/static/media/main.c4902d9c.png",
+    "static/media/myComplaint.17e8dddf.jpg": "/static/media/myComplaint.17e8dddf.jpg",
+    "static/media/socied.60133e81.jpg": "/static/media/socied.60133e81.jpg",
+    "static/media/traveline.b0549c15.jpg": "/static/media/traveline.b0549c15.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.609de10c.js",
+    "static/js/2.00030a71.chunk.js",
+    "static/css/main.d342a5ec.chunk.css",
+    "static/js/main.314c2ef5.chunk.js"
+  ]
+}
