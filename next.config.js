@@ -11,7 +11,8 @@ const nextConfig = {
     // ESLint managed on the workspace level
     ignoreDuringBuilds: true,
   },
-  trailingSlash: true,
+  assetPrefix: './',
+  // trailingSlash: true,
 }
 
 module.exports = withPlugins(
