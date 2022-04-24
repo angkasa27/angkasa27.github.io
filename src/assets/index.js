@@ -1,10 +1,10 @@
-import Main from "./Main.png";
-import Bg from "./Bg.png";
-import MyComplaint from "./MyComplaint.jpg";
-import Frekuensi from "./Frekuensi.jpg";
-import Amir from "./Amir.jpg";
-import Traveline from "./Traveline.jpg";
-import Socied from "./Socied.jpg";
+import Main from "./main.png";
+import Bg from "./bg.png";
+import MyComplaint from "./myComplaint.jpg";
+import Frekuensi from "./frekuensi.jpg";
+import Amir from "./amir.jpg";
+import Traveline from "./traveline.jpg";
+import Socied from "./socied.jpg";
 import Contact from "./Contact.png";
 import ContactBg from "./ContactBg.png";
 
