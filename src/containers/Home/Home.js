@@ -411,8 +411,8 @@ const pathVariants = {
 
 export const containerVariant = {
   visible: {
-    x: ['0vw', '0vw', '-101vw'],
-    opacity: [1, 0, 0],
+    x: '-101vw',
+    // opacity: [1, 0, 0],
     transition: {
       type: 'tween',
       delay: 0.5,
@@ -423,7 +423,7 @@ export const containerVariant = {
   },
   hidden: {
     x: 0,
-    opacity: 1,
+    // opacity: 1,
     transition: {
       type: 'tween',
     },
@@ -478,7 +478,7 @@ const Cover = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariant}
-      className="fixed z-[100] flex h-screen w-full items-center justify-center bg-zinc-900"
+      className="fixed z-[100] flex h-screen w-full items-center justify-center bg-zinc-800"
     >
       <div className=" relative text-white">
         <svg
