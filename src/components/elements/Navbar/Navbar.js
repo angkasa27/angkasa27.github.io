@@ -138,15 +138,22 @@ const Nav = ({ active }) => {
           <div className="hidden items-center gap-12 md:flex">
             <ul className="gap-12 md:flex">
               {MENU.map((v, i) => (
-                <li key={i} onClick={() => setShowMenu(false)}>
+                <li
+                  key={i}
+                  onClick={() => setShowMenu(false)}
+                  className={
+                    ' defaultTransition border-b-2 delay-100 ' +
+                    (v.name === active
+                      ? 'border-green-500 text-white  '
+                      : 'border-transparent text-zinc-400 ')
+                  }
+                >
                   <Button
                     type="text"
                     nav={v.href}
                     className={
-                      'border-b-2 border-transparent hover:text-white ' +
-                      (v.name === active
-                        ? 'border-green-500 text-white'
-                        : 'text-zinc-400')
+                      'defaultTransition delay-100 hover:text-white ' +
+                      (v.name === active ? 'text-white' : 'text-zinc-400')
                     }
                   >
                     {v.label}
