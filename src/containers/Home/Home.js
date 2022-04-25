@@ -102,12 +102,13 @@ const About = ({ setSection, name }) => {
             from East Java, Indonesia.
           </p>
           <p className="">
-            Currently working I'm working at Telkom Indonesia Tribe EWZ as a
-            frontend developer.
+            Currently, I'm working at Telkom Indonesia Tribe EWZ as a frontend
+            developer.
           </p>
           <p className="">
-            After graduating fromSMK Telkom Malang, I continue my study at Binus
-            University for Bachelor's degree majoring in Information Systems.
+            After graduating from SMK Telkom Malang, I continue my study at
+            Binus University for Bachelor's degree majoring in Information
+            Systems.
           </p>
           <p className="">
             In recent years, I've been focused on programming, building a solid
@@ -116,8 +117,9 @@ const About = ({ setSection, name }) => {
           </p>
           <p className="">
             Alongside my study and development work, I run an online web
-            invitation based on requests called SuratBahagia, so I like to keep
-            busy!
+            invitation based on requests called SuratBahagia and moklet
+            developer's community based on GitHub with my friends, so I like to
+            keep busy!
           </p>
         </div>
         <div className="col-span-3 row-start-1 h-auto w-full overflow-hidden rounded bg-green-600 md:col-span-1 md:row-start-auto">
